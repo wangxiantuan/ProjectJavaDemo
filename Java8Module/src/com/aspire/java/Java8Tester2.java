@@ -56,11 +56,18 @@ public class Java8Tester2 {
         List<String> lowercaseNames = proNames.stream().map(name ->{return name.toLowerCase();}).collect(Collectors.toList());
         System.out.println("转换后："+lowercaseNames);
 
-        System.out.println("将字符串转换为全小写");
+        System.out.println("将字符串转换为全大写");
         List<String> proNames2 = Arrays.asList(new String[]{"ni","hao","lambda"});
         System.out.println("转换前："+proNames2);
         List<String> upperCaseNames = proNames2.stream().map(name -> name.toUpperCase()).collect(Collectors.toList());
         System.out.println("转换后："+upperCaseNames);
+
+        System.out.println("将字符串转换为全大写");
+        List<String> proNames3 = Arrays.asList(new String[]{"ni","hao","lambda"});
+        System.out.println("转换前："+proNames3);
+        List<String> upperCaseNames2 = proNames3.stream().map(String :: toUpperCase).collect(Collectors.toList());
+        System.out.println("转换后："+upperCaseNames2);
+
     }
     public  interface  Converter<T1,T2>{
         void convert(int i);
